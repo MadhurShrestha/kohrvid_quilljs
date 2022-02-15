@@ -1,0 +1,30 @@
+
+
+
+<%= form_for @article do |f| %>
+  <fieldset class="row">
+    <div>
+      <%= f.label :title, "Title" %>
+    </div>
+    <div>
+      <%= f.text_field :title %>
+    </div>
+  </fieldset>
+  <fieldset class="row">
+    <div>
+      <%= f.label :body, "Body" %>
+    </div>
+    <div>
+      <%= f.hidden_field :body, class: "article-content" %>
+      <div id="editor-container" style="height: 30rem; width: 100%;">
+        <%= raw(@article.body) %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="row">
+    <div>
+      <%= f.button "Submit", class: "button" %>
+    </div>
+  </fieldset>
+<% end %>
