@@ -8,6 +8,9 @@ const MAX_FILE_SIZE = 1000000
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  if(!document.querySelector('input[class=article-content]')){
+    return;
+  }
   var quill = new Quill('#editor-container', {
     modules: {
       toolbar: [
@@ -37,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
       }
     },
-    value: document.querySelector('input[class=rich-text-content]').value,
+    value: document.querySelector('input[class=article-content]').value,
     theme: 'snow'
   });
 
